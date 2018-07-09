@@ -13,6 +13,7 @@ function handleArray(js) {
 	}
 	return js;
 }
+
 /**
  * Accept JSON or XML
  * The format is decided according the HTTP Request header 'Accept'

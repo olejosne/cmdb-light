@@ -10,7 +10,7 @@ function getId(id) {
 	} catch (e) {
 		throw {
 			status: 400,
-			message: 'Id not well formatted',
+			message: 'Id: Bad format',
 		}
 	}
 }

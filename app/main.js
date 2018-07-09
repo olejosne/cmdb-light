@@ -4,8 +4,6 @@ const url = '../../api/applications';
 
 function MyController($http) {
 
-
-
 	this.query = function () {
 		console.log('appel query en cours...');
 		return $http.get(url).then(response => this.applications = response.data.content).catch(e => console.log('error', e));

@@ -13,7 +13,6 @@ function addLink(req, object) {
     return result;
 }
 
-
 module.exports = {
     addLink,
 };

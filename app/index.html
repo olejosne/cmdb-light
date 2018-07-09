@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>REST Example</title>
+	<link rel="stylesheet" href="../node_modules/angular/angular-csp.css" />
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body ng-cloak ng-csp ng-app="myApp" ng-controller="MyController as $ctrl">
+	<h1>My CMDB Light</h1>
+	<p>Note: install webpack globally and run it to see the compiled file.
+		<br/>
+		<br/>
+		<label>New Application name:
+			<input type="text" placeholeder="Ex: my CRM" ng-model="$ctrl.newApplication.name" />
+		</label><br/>
+		<label>New Application version:
+			<input type="text" placeholeder="Ex: 1.0.0" ng-model="$ctrl.newApplication.version" />
+		</label><br/>
+		<label>New Application description:
+			<input type="text" placeholeder="Ex: Application to manage my customers" ng-model="$ctrl.newApplication.description" />
+		</label>
+		<button jlg-click-and-disable="$ctrl.create()">Create</button>
+		<br/>
+		<br/>
+	</p>
+	<fieldset>
+
+		<button jlg-click-and-disable="$ctrl.query()">Rafraichir la liste des applications</button>&nbsp;
+		<button jlg-click-and-disable="$ctrl.empty()">Delete All</button>
+		<br/>
+
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>New name</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+			<tr ng-repeat="application in $ctrl.applications track by $index">
+				<td>{{Application._id}}</td>
+				<td>{{Application.name}}</td>
+				<td>
+					<input type="text" ng-model="application.newName" />
+				</td>
+				<td>
+					<button jlg-click-and-disable="$ctrl.update(Application)">Update</button>
+				</td>
+				<td>
+					<button jlg-click-and-disable="$ctrl.delete(Application)">Delete</button>
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<fieldset ng-init="id = 2">
+		<input type="text" ng-model="id" />
+		<br/>
+		<button jlg-click-and-disable="$ctrl.retrieve(id)">Retrieve the Application</button>
+		<br/>
+		<br/>
+		<div ng-cloak>Retrieve Application: {{$ctrl.retrievedApplication}}</div>
+	</fieldset>
+	<script src="../node_modules/angular/angular.js"></script>
+	<script src="./main.js"></script>
+</body>
+
+</html>

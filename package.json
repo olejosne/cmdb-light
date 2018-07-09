@@ -1,0 +1,29 @@
+{
+  "name": "cmdb-light",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olejosne/cmdb-light.git"
+  },
+  "keywords": [],
+  "author": "olejosne",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/olejosne/cmdb-light/issues"
+  },
+  "homepage": "https://github.com/olejosne/cmdb-light#readme",
+  "dependencies": {
+    "angular": "^1.6.10",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "jsontoxml": "^1.0.0",
+    "mongoose": "^5.0.16",
+    "serve-index": "^1.9.1"
+  },
+  "devDependencies": {}
+}
